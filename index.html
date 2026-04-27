@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dana Khasanov</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+<canvas id="grid-canvas" aria-hidden="true"></canvas>
+
+<nav id="nav">
+    <a href="#hero" class="nav-logo">&lt;DK/&gt;</a>
+    <ul class="nav-links">
+        <li><a href="#about">about</a></li>
+        <li><a href="#skills">skills</a></li>
+        <li><a href="#coursework">courses</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#experience">exp</a></li>
+        <li><a href="#contact">contact</a></li>
+    </ul>
+    <div class="nav-status">
+        <span class="status-dot"></span>
+        <span class="status-text">open to opportunities</span>
+    </div>
+</nav>
+
+<section class="hero" id="hero">
+    <div class="hero-left">
+        <div class="hero-pre">// initializing<span class="blink-dots">...</span></div>
+        <h1 class="hero-name">
+            <span id="typed-name"></span><span class="cursor-blink">█</span>
+        </h1>
+        <div class="hero-tags">
+            <span class="htag">full_stack</span>
+            <span class="htag">ml</span>
+            <span class="htag">systems</span>
+            <span class="htag">seattle_wa</span>
+        </div>
+        <p class="hero-bio">
+            CS @ University of Washington. I build things end-to-end.
+            React frontends, Node backends, ML experiments, low-level C.
+            I like to lead clubs. Always sleep-deprived.
+        </p>
+        <div class="hero-ctas">
+            <a href="https://github.com/nmu0" target="_blank" class="btn btn-primary">[ github ]</a>
+            <a href="https://www.linkedin.com/in/dana-khasanov-53b652343" target="_blank" class="btn">[ linkedin ]</a>
+            <a href="mailto:oregano365@gmail.com" class="btn">[ email ]</a>
+        </div>
+    </div>
+
+    <div class="hero-right" aria-hidden="true">
+        <div class="code-window">
+            <div class="code-window-bar">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="code-window-title">dana.json</span>
+            </div>
+            <pre class="code-body"><span class="ct">{</span>
+  <span class="ck">"name"</span><span class="cp">:</span> <span class="cs">"Dana Khasanov"</span><span class="cp">,</span>
+  <span class="ck">"location"</span><span class="cp">:</span> <span class="cs">"Seattle, WA"</span><span class="cp">,</span>
+  <span class="ck">"degree"</span><span class="cp">:</span> <span class="cs">"B.S. Computer Science"</span><span class="cp">,</span>
+  <span class="ck">"school"</span><span class="cp">:</span> <span class="cs">"UW Seattle"</span><span class="cp">,</span>
+  <span class="ck">"stack"</span><span class="cp">:</span> <span class="ct">[</span>
+    <span class="cs">"React"</span><span class="cp">,</span> <span class="cs">"Node.js"</span><span class="cp">,</span>
+    <span class="cs">"Python"</span><span class="cp">,</span> <span class="cs">"Rust"</span><span class="cp">,</span>
+    <span class="cs">"C"</span><span class="cp">,</span> <span class="cs">"AWS"</span>
+  <span class="ct">]</span><span class="cp">,</span>
+  <span class="ck">"status"</span><span class="cp">:</span> <span class="cs">"open_to_internships"</span><span class="cp">,</span>
+  <span class="ck">"coffee_level"</span><span class="cp">:</span> <span class="cn">0.12</span>
+<span class="ct">}</span></pre>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="section-header">
+        <span class="sh-comment">// 01</span>
+        <h2 class="sh-title">about_me</h2>
+        <div class="sh-line"></div>
+    </div>
+    <div class="about-grid">
+        <div class="about-text">
+            <p>
+                I'm a Computer Science student at the University of Washington in Seattle.
+                I work across the full stack, building UIs in React, APIs in Node.js,
+                and occasionally dropping into Rust or C when performance matters.
+            </p>
+            <p>
+                Outside of code: I coach swimming, go outside, mentor high schoolers learning HTML and CSS,
+                and have a borderline unhealthy relationship with niche music and anime.
+                I care a lot about building software that's actually useful.
+            </p>
+            <div class="about-meta">
+                <div class="meta-row"><span class="meta-k">school</span><span class="meta-v">University of Washington, Seattle</span></div>
+                <div class="meta-row"><span class="meta-k">degree</span><span class="meta-v">B.S. Computer Science</span></div>
+                <div class="meta-row"><span class="meta-k">email</span><span class="meta-v"><a href="mailto:oregano365@gmail.com">oregano365@gmail.com</a></span></div>
+            </div>
+        </div>
+        <div class="about-art" aria-hidden="true">
+            <svg viewBox="0 0 260 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="snake-path" d="M130 290 C80 260 60 220 90 190 C120 160 160 170 150 140 C140 110 100 100 110 70 C120 40 160 30 155 10"
+                      stroke="#3a86ff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                <path class="snake-path-2" d="M130 290 C170 265 185 230 160 200 C135 170 100 175 108 148 C116 120 148 105 140 78 C132 52 105 44 108 18"
+                      stroke="#3a86ff" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+                <circle class="orb" cx="155" cy="10" r="5" fill="#3a86ff" opacity="0.9"/>
+                <circle cx="155" cy="10" r="14" fill="none" stroke="#3a86ff" stroke-width="0.5" opacity="0.25" class="orb"/>
+                <line x1="30" y1="80"  x2="230" y2="80"  stroke="#3a86ff" stroke-width="0.3" opacity="0.15"/>
+                <line x1="30" y1="160" x2="230" y2="160" stroke="#3a86ff" stroke-width="0.3" opacity="0.15"/>
+                <line x1="30" y1="240" x2="230" y2="240" stroke="#3a86ff" stroke-width="0.3" opacity="0.15"/>
+                <path d="M35 45 L35 22 L58 22" stroke="#3a86ff" stroke-width="1.2" opacity="0.4"/>
+                <path d="M225 45 L225 22 L202 22" stroke="#3a86ff" stroke-width="1.2" opacity="0.4"/>
+                <path d="M35 275 L35 298 L58 298" stroke="#3a86ff" stroke-width="1.2" opacity="0.4"/>
+                <path d="M225 275 L225 298 L202 298" stroke="#3a86ff" stroke-width="1.2" opacity="0.4"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="skills">
+    <div class="section-header">
+        <span class="sh-comment">// 02</span>
+        <h2 class="sh-title">skills</h2>
+        <div class="sh-line"></div>
+    </div>
+    <div class="skills-grid">
+        <div class="skill-block">
+            <div class="sb-label">languages</div>
+            <div class="sb-items">
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Rust</span>
+                <span class="skill-pill">C</span>
+                <span class="skill-pill">SQLite</span>
+                <span class="skill-pill">Assembly</span>
+            </div>
+        </div>
+        <div class="skill-block">
+            <div class="sb-label">frameworks &amp; tools</div>
+            <div class="sb-items">
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Node.js</span>
+                <span class="skill-pill">Flutter</span>
+                <span class="skill-pill">REST APIs</span>
+                <span class="skill-pill">AWS EC2</span>
+                <span class="skill-pill">Git / GitHub</span>
+                <span class="skill-pill">Google Suite</span>
+            </div>
+        </div>
+        <div class="skill-block">
+            <div class="sb-label">concepts</div>
+            <div class="sb-items">
+                <span class="skill-pill">Machine Learning</span>
+                <span class="skill-pill">Data Structures</span>
+                <span class="skill-pill">Parallelism</span>
+                <span class="skill-pill">Systems Programming</span>
+                <span class="skill-pill">Cybersecurity</span>
+                <span class="skill-pill">UI/UX Design</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="coursework">
+    <div class="section-header">
+        <span class="sh-comment">// 03</span>
+        <h2 class="sh-title">uw_coursework</h2>
+        <div class="sh-line"></div>
+    </div>
+    <p class="section-sub">Relevant classes @ University of Washington, Seattle</p>
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="cc-dept">CSE 121</div>
+            <div class="cc-name">Introduction to Computer Programming I</div>
+            <p class="cc-desc">First introduction to programming: computational thinking, problem decomposition, and writing correct code.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 143X</div>
+            <div class="cc-name">Computer Programming II/III (accelerated)</div>
+            <p class="cc-desc">Accelerated OOP, recursion, data structures, and algorithmic thinking in Java.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 311</div>
+            <div class="cc-name">Foundations of Computing I</div>
+            <p class="cc-desc">Logic, sets, proofs, and number theory as foundations for computer science.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 312</div>
+            <div class="cc-name">Foundations of Computing II</div>
+            <p class="cc-desc">Probability, combinatorics, and statistical reasoning applied to computing.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 331</div>
+            <div class="cc-name">Software Design &amp; Implementation</div>
+            <p class="cc-desc">Software engineering principles: design, testing, abstraction, and writing maintainable code.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 332</div>
+            <div class="cc-name">Data Structures &amp; Parallelism</div>
+            <p class="cc-desc">Advanced data structures, algorithm analysis, and concurrent computation.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 340</div>
+            <div class="cc-name">Interaction Programming</div>
+            <p class="cc-desc">Building interactive applications: event-driven programming, UI design, and accessibility.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 344</div>
+            <div class="cc-name">Introduction to Data Management</div>
+            <p class="cc-desc">Relational databases, SQL, query optimization, and data modeling at scale.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 351</div>
+            <div class="cc-name">The Hardware/Software Interface</div>
+            <p class="cc-desc">Memory, caching, x86 assembly, and C programming — how hardware meets software.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">CSE 446</div>
+            <div class="cc-name">Machine Learning</div>
+            <p class="cc-desc">Supervised/unsupervised learning, neural networks, and model evaluation.</p>
+        </div>
+        <div class="course-card">
+            <div class="cc-dept">MATH 208</div>
+            <div class="cc-name">Linear Algebra</div>
+            <p class="cc-desc">Vectors, matrices, transformations, eigenvalues — the math behind ML and graphics.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="projects">
+    <div class="section-header">
+        <span class="sh-comment">// 04</span>
+        <h2 class="sh-title">projects</h2>
+        <div class="sh-line"></div>
+    </div>
+    <div class="project-list">
+        <div class="project-card featured">
+            <div class="pc-top">
+                <span class="pc-num">01</span>
+                <a href="https://nmu0.github.io/Photo-World/" target="_blank" class="pc-link">[ live site ↗ ]</a>
+            </div>
+            <h3 class="pc-name">Photo World</h3>
+            <p class="pc-desc">A personal project and creative playground — a deployed web experience built and maintained just for fun. Browse it live to see what I build when there's no assignment attached.</p>
+            <div class="pc-tags">
+                <span class="ptag">Personal</span><span class="ptag">Creative</span><span class="ptag">Deployed</span><span class="ptag">GitHub Pages</span>
+            </div>
+            <div class="pc-preview">
+                <a href="https://nmu0.github.io/Photo-World/" target="_blank" class="pc-preview-link" aria-label="Visit Photo World">
+                    <div class="pc-preview-frame">
+                        <div class="pc-preview-bar">
+                            <span class="pf-dot r"></span><span class="pf-dot y"></span><span class="pf-dot g"></span>
+                            <span class="pf-url">nmu0.github.io/Photo-World/</span>
+                        </div>
+                        <div class="pc-preview-screen">
+                            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="pc-preview-svg">
+                                <!-- abstract landscape / photo world feel -->
+                                <rect width="400" height="200" fill="#0a0f1a"/>
+                                <!-- horizon glow -->
+                                <ellipse cx="200" cy="130" rx="180" ry="40" fill="rgba(58,134,255,0.08)"/>
+                                <!-- mountains / terrain -->
+                                <polygon points="0,200 60,100 120,150 180,80 240,130 300,70 360,110 400,90 400,200" fill="#0d1828" stroke="rgba(58,134,255,0.3)" stroke-width="1"/>
+                                <polygon points="0,200 40,130 80,160 130,100 170,140 220,90 270,120 320,85 370,105 400,95 400,200" fill="#0b1520" stroke="rgba(58,134,255,0.15)" stroke-width="0.5"/>
+                                <!-- stars -->
+                                <circle cx="40"  cy="20"  r="1" fill="#fff" opacity="0.7"/>
+                                <circle cx="90"  cy="45"  r="1.5" fill="#fff" opacity="0.5"/>
+                                <circle cx="150" cy="15"  r="1" fill="#fff" opacity="0.8"/>
+                                <circle cx="220" cy="30"  r="1" fill="#fff" opacity="0.6"/>
+                                <circle cx="300" cy="10"  r="1.5" fill="#fff" opacity="0.4"/>
+                                <circle cx="360" cy="35"  r="1" fill="#fff" opacity="0.7"/>
+                                <circle cx="70"  cy="60"  r="0.8" fill="#fff" opacity="0.5"/>
+                                <circle cx="330" cy="55"  r="0.8" fill="#3a86ff" opacity="0.9"/>
+                                <!-- moon -->
+                                <circle cx="320" cy="40" r="18" fill="#0d1828" stroke="rgba(200,220,255,0.6)" stroke-width="1"/>
+                                <circle cx="314" cy="36" r="15" fill="#0a0f1a"/>
+                                <!-- photo frames floating -->
+                                <rect x="60" y="55" width="50" height="38" rx="2" fill="none" stroke="rgba(58,134,255,0.5)" stroke-width="1" transform="rotate(-5 85 74)"/>
+                                <rect x="170" y="40" width="44" height="34" rx="2" fill="none" stroke="rgba(58,134,255,0.4)" stroke-width="1" transform="rotate(3 192 57)"/>
+                                <rect x="270" y="60" width="48" height="36" rx="2" fill="none" stroke="rgba(58,134,255,0.45)" stroke-width="1" transform="rotate(-2 294 78)"/>
+                                <!-- "open" label -->
+                                <text x="200" y="170" text-anchor="middle" font-family="monospace" font-size="9" fill="rgba(58,134,255,0.7)" letter-spacing="3">CLICK TO VISIT →</text>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="pc-top">
+                <span class="pc-num">02</span>
+                <a href="https://github.com/nmu0" target="_blank" class="pc-link">[ github ]</a>
+            </div>
+            <h3 class="pc-name">SmartSched</h3>
+            <p class="pc-desc">Full-stack scheduling app with React and Node.js. REST API backend, real-world calendar logic, clean responsive UI. End-to-end product from DB schema to user flows.</p>
+            <div class="pc-tags">
+                <span class="ptag">React</span><span class="ptag">Node.js</span><span class="ptag">REST API</span><span class="ptag">Git</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="experience">
+    <div class="section-header">
+        <span class="sh-comment">// 05</span>
+        <h2 class="sh-title">experience</h2>
+        <div class="sh-line"></div>
+    </div>
+    <div class="exp-list">
+        <div class="exp-item">
+            <div class="exp-left">
+                <div class="exp-date">04/2026 – 09/2026</div>
+                <div class="exp-connector"></div>
+            </div>
+            <div class="exp-right">
+                <div class="exp-role">HiC Mentor — Web Dev</div>
+                <div class="exp-org">Changemakers / CiC</div>
+                <p class="exp-desc">Teaching HTML and CSS to high school students via structured curriculum. Individualized guidance, group sessions, mentee application review.</p>
+            </div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-left">
+                <div class="exp-date">ongoing</div>
+                <div class="exp-connector"></div>
+            </div>
+            <div class="exp-right">
+                <div class="exp-role">Swim Coach</div>
+                <div class="exp-org">Mountlake Terrace Aquatics</div>
+                <p class="exp-desc">Designed and ran safe, engaging practice sessions across skill levels. Coaching strategy, group dynamics, athlete development.</p>
+            </div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-left">
+                <div class="exp-date">prev</div>
+                <div class="exp-connector"></div>
+            </div>
+            <div class="exp-right">
+                <div class="exp-role">Database Assistant</div>
+                <div class="exp-org">Nonprofit Organization</div>
+                <p class="exp-desc">Managed donor databases, ensured data integrity, and supported organizational operations through structured record keeping.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="section-header">
+        <span class="sh-comment">// 06</span>
+        <h2 class="sh-title">contact</h2>
+        <div class="sh-line"></div>
+    </div>
+    <div class="contact-wrap">
+        <p class="contact-lead">Open to internships, cool collabs, and interesting problems.</p>
+        <div class="contact-links">
+            <a href="mailto:oregano365@gmail.com" class="contact-row">
+                <span class="cr-label">email</span>
+                <span class="cr-val">oregano365@gmail.com</span>
+                <span class="cr-arrow">→</span>
+            </a>
+            <a href="https://github.com/nmu0" target="_blank" class="contact-row">
+                <span class="cr-label">github</span>
+                <span class="cr-val">github.com/nmu0</span>
+                <span class="cr-arrow">→</span>
+            </a>
+            <a href="https://www.linkedin.com/in/dana-khasanov-53b652343" target="_blank" class="contact-row">
+                <span class="cr-label">linkedin</span>
+                <span class="cr-val">dana-khasanov-53b652343</span>
+                <span class="cr-arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <span>&lt;DK/&gt; © 2026</span>
+    <span class="footer-r">Seattle, WA &nbsp;·&nbsp; built with ♥ and too much caffeine</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
