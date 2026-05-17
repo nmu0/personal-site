@@ -49,7 +49,6 @@ function spawnComet() {
     });
 }
 
-// spawn a comet every 4-8 seconds
 setInterval(spawnComet, Math.random() * 4000 + 4000);
 
 function drawAll() {
@@ -58,7 +57,6 @@ function drawAll() {
     const cols = Math.ceil(canvas.width  / GRID) + 1;
     const rows = Math.ceil(canvas.height / GRID) + 1;
 
-    // grid lines
     ctx.strokeStyle = 'rgba(58,134,255,0.05)';
     ctx.lineWidth   = 0.5;
     for (let c = 0; c <= cols; c++) {
@@ -68,7 +66,6 @@ function drawAll() {
         ctx.beginPath(); ctx.moveTo(0, r * GRID); ctx.lineTo(canvas.width, r * GRID); ctx.stroke();
     }
 
-    // grid dots with mouse glow
     for (let c = 0; c < cols; c++) {
         for (let r = 0; r < rows; r++) {
             const x = c * GRID, y = r * GRID;
@@ -83,8 +80,6 @@ function drawAll() {
         }
     }
 
-    // floating particles
-    const t = Date.now() * 0.001;
     for (const p of particles) {
         p.x += p.dx; p.y += p.dy;
         p.pulse += 0.02;
@@ -99,7 +94,6 @@ function drawAll() {
         ctx.fill();
     }
 
-    // comets
     comets = comets.filter(c => c.life > 0);
     for (const c of comets) {
         c.x += Math.cos(c.angle) * c.speed;
@@ -109,8 +103,8 @@ function drawAll() {
         const tailX = c.x - Math.cos(c.angle) * c.len;
         const tailY = c.y - Math.sin(c.angle) * c.len;
         const grad = ctx.createLinearGradient(tailX, tailY, c.x, c.y);
-        grad.addColorStop(0, 'rgba(58,134,255,0)');
-        grad.addColorStop(1, `rgba(180,210,255,${c.life * 0.7})`);
+        grad.addColorStop(0, 'rgba(255,60,60,0)');
+        grad.addColorStop(1, `rgba(255,120,100,${c.life * 0.7})`);
         ctx.beginPath();
         ctx.moveTo(tailX, tailY);
         ctx.lineTo(c.x, c.y);
@@ -118,10 +112,9 @@ function drawAll() {
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
-        // comet head glow
         const headGrad = ctx.createRadialGradient(c.x, c.y, 0, c.x, c.y, 6);
-        headGrad.addColorStop(0, `rgba(200,225,255,${c.life * 0.9})`);
-        headGrad.addColorStop(1, 'rgba(58,134,255,0)');
+        headGrad.addColorStop(0, `rgba(255,140,120,${c.life * 0.9})`);
+        headGrad.addColorStop(1, 'rgba(255,60,60,0)');
         ctx.beginPath();
         ctx.arc(c.x, c.y, 6, 0, Math.PI * 2);
         ctx.fillStyle = headGrad;
